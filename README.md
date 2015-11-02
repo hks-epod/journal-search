@@ -13,13 +13,13 @@ November 2015. Some basic text mining of econ articles.
 ### Notes
 * AER's links to past issues are very well-structured: 
 ```
-'<a href="/articles.php?doi=10.1257/aer.' + 'i.j">'`
+<a href="/articles.php?doi=10.1257/aer.' + 'i.j">
 ```
 where `i` is years since 1910 (e.g. 2015 is `105`) and `j` is months (e.g. November is `11`, January is `1`).
 * JPE is causing problems; getting HTTP errors (302 (infinite loop) and 404 (not found)). It works when a human does it. Use `selenium`?
 * Econometrica's link to past issues are also very well-structured: 
 ```
-<a href="/publications/econometrica/issue/2014/11/">November 2014 (Issue 6)</a><
+<a href="/publications/econometrica/issue/2014/11/">November 2014 (Issue 6)</a>
 ```
 Lovely.
 
@@ -32,5 +32,5 @@ Lovely.
 5. Count the number of times that the word forecast appears (or its relatives like forecasting) appears.
 6. Tally these counts by journal and by year (in excel)
 7. Tally the number of articles for which we checked (so we have a denominator)
-8. Make `.gitignore`. 
+8. ~~Make `.gitignore`.~~
 
