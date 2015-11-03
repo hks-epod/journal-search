@@ -8,7 +8,7 @@ from unidecode import unidecode
 
 # Some globals
 PAPERS = [{"name": "AER", "top": "https://www.aeaweb.org/", "issues": "/articles.php?doi=10.1257/aer.", "tail": "aer/issues.php"},
-		 # {"name": "JPE", "top": "http://www.jstor.org/journal/jpoliecon", "issues": "" , "tail": ""},
+		 {"name": "JPE", "top": "http://www.jstor.org/journal/jpoliecon", "issues": "" , "tail": ""},
 		 {"name": "Econometrica", "top": "https://www.econometricsociety.org/", "issues": "/publications/econometrica/issue/", "tail": "publications/econometrica/browse"}]
 
 
@@ -45,7 +45,6 @@ def CreateData(titles, date_of_issue, text_string, journal):
 		titles.append({'date': date_of_issue,
 				'title': text_string,
 				'journal': journal['name']})
-	# return titles
 
 
 def GetIssueTitles(previous_issues, journal):
@@ -61,7 +60,6 @@ def GetIssueTitles(previous_issues, journal):
 			for link in issue_soup.find_all('a', href=True):
 				if "articles.php" in link["href"]:
 					text = CleanText(link)
-
 					CreateData(titles, issue_date, text, journal)
 
 
@@ -79,20 +77,6 @@ def GetIssueTitles(previous_issues, journal):
 
 	return titles
 
-
-# Full run
-for paper in PAPERS:	
-	
-	soup = Souping(paper['top'] + paper['tail'])
-	old_issues = GetOldIssues(soup, paper)
-	all_titles = GetIssueTitles(old_issues, paper)
-
-	OutputtingCSV(all_titles, paper)
-
-# pp = pprint.PrettyPrinter(indent=4)
-# pp.pprint(all_titles)
-
-
 def OutputtingCSV(titles, journal):
 	print "Writing to CSV file."
 
@@ -102,4 +86,24 @@ def OutputtingCSV(titles, journal):
 	    a = csv.DictWriter(f, keys)
 	    a.writeheader()
 	    a.writerows(titles)
+
+
+soup = Souping(PAPERS[1]['top'] + PAPERS[1]['tail'])
+old_issues = GetOldIssues(soup, PAPERS[1])
+all_titles = GetIssueTitles(old_issues, PAPERS[1])
+OutputtingCSV(all_titles, PAPERS[1])
+
+# Full run
+# for paper in PAPERS:	
+
+# 	soup = Souping(paper['top'] + paper['tail'])
+# 	old_issues = GetOldIssues(soup, paper)
+# 	all_titles = GetIssueTitles(old_issues, paper)
+
+# 	OutputtingCSV(all_titles, paper)
+
+# pp = pprint.PrettyPrinter(indent=4)
+# pp.pprint(all_titles)
+
+
 
