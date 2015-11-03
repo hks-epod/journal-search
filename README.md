@@ -21,16 +21,19 @@ where `i` is years since 1910 (e.g. 2015 is `105`) and `j` is months (e.g. Novem
 ```
 <a href="/publications/econometrica/issue/2014/11/">November 2014 (Issue 6)</a>
 ```
-Lovely.
+Lovely. However, Econometrica's articles are united by `<div class="featured_paper_content">`, which is not helpful. (Since AER's articles are all united by `articles.php` being in their `<a href>`.)
 
 
 ### TODO
 1. ~~`git`.~~
 2. Look at 2-3 top econ journals (say AER, Journal of Political Economy, and Econometrica) for the past 3-5 years (depending on how time consuming the task is)
+  * Get JPE to work...
 3. Count the number of times that the word effect (or its relatives like “impact”) appears.
 4. Count the number of times that the word predict (or its relatives like prediction, predicting,predicted etc) appears.
 5. Count the number of times that the word forecast appears (or its relatives like forecasting) appears.
 6. Tally these counts by journal and by year (in excel)
 7. Tally the number of articles for which we checked (so we have a denominator)
 8. ~~Make `.gitignore`.~~
+9. Do this for abstracts.
+10. Do this for full articles?
 
