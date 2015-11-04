@@ -82,7 +82,7 @@ def OutputtingCSV(titles, journal):
 
 	keys = titles[0].keys()
 
-	with open(journal['name'] + '_titles.csv', 'wb') as f:
+	with open('data/titles_' + journal['name'] + '.csv', 'wb') as f:
 	    a = csv.DictWriter(f, keys)
 	    a.writeheader()
 	    a.writerows(titles)
