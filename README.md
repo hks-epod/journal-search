@@ -44,4 +44,7 @@ The array of stems that we're interested in are `['impact*', 'effect*', 'predict
 8. ~~Make `.gitignore`.~~
 9. Do this for abstracts.
 10. Do this for full articles?
+  * Up for AER. But it's duplicating - why?
+  * TODO JPE, Econometrica. 
+
 
